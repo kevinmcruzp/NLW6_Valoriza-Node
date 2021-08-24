@@ -24,7 +24,7 @@ class CreateUserService {
     if (userAlreadyExists) {
       throw new Error("User already exists");
     }
-
+    
     const passwordHash = await hash(password, 8)
 
     const user = usersRepository.create({
